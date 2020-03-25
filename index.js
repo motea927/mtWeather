@@ -10,7 +10,9 @@ let config = {
 if (!config.channelAccessToken) config = require('./line-key-config')
 
 app.post('/webhook', middleware(config), (req, res) => {
+  console.log(`events`)
   console.log(req.body.events)
+  console.log(`des`)
   console.log(req.body.destination)
   res.json(req.body.events)
 })
