@@ -17,12 +17,33 @@ const client = new line.Client({
 app.post('/webhook', middleware(config), (req, res) => {
   const userMessage = req.body.events[0].message
   const replyToken = req.body.events[0].replyToken
-  console.log(`events`)
-  console.log(req.body.events)
-  // res.json(req.body.events)
-  const replyMessage = {
+  let replyMessage = {
     type: 'text',
-    text: `Hello World! ${req.body.events[0].message.text}`
+    text: `Hello World! ${userMessage.text}`
+  }
+  switch (userMessage.text) {
+    case '我的位置':
+      replyMessage = {
+        "quickReply": {
+          "items": [
+            {
+              "type": "action",
+              "action": {
+                "type": "cameraRoll",
+                "label": "Send photo"
+              }
+            },
+            {
+              "type": "action",
+              "action": {
+                "type": "camera",
+                "label": "Open camera"
+              }
+            }
+          ]
+        }
+      }
+      break;
   }
   client.replyMessage(replyToken, replyMessage)
 })
