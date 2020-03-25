@@ -23,7 +23,7 @@ app.post('/webhook', middleware(config), (req, res) => {
     text: `Hello World! ${userMessage.text}`
   }
   switch (userMessage.text) {
-    case '我的位置':
+    case '我的GPS定位':
       replyMessage = {
         "type": "text", // ①
         "text": "請按下「傳送我的GPS定位」",
