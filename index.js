@@ -8,6 +8,7 @@ const config = require('./line-key-config.js')
 app.post('/webhook', middleware(config), (req, res) => {
   console.log(req.body.events) // webhook event objects
   console.log(req.body.destination) // user ID of the bot (optional)
+  res.json(req.body.events)
 })
 
 app.listen(process.env.PORT || 8080)
