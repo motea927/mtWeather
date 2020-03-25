@@ -1,27 +1,13 @@
-const express = require('express');
-const line = require('@line/bot-sdk');
-const config = require('./line-key-config.js');
+const express = require('express')
+const middleware = require('@line/bot-sdk').middleware
 
+const app = express()
 
-const app = express();
-app.post('/', line.middleware(config), (req, res) => {
-  Promise
-    .all(req.body.events.map(handleEvent))
-    .then((result) => res.json(result));
-});
+const config = require('./line-key-config.js')
 
-const client = new line.Client(config);
-function handleEvent(event) {
-  if (event.type !== 'message' || event.message.type !== 'text') {
-    return Promise.resolve(null);
-  }
+app.post('/webhook', middleware(config), (req, res) => {
+  console.log(req.body.events) // webhook event objects
+  console.log(req.body.destination) // user ID of the bot (optional)
+})
 
-  return client.replyMessage(event.replyToken, {
-    type: 'text',
-    text: event.message.text
-  });
-}
-
-app.listen(process.env.PORT || 8080, function() {
-  console.log(`App now running on port ${process.env.PORT || 8080}`);
-});
+app.listen(process.env.PORT || 8080)
