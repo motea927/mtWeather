@@ -16,6 +16,7 @@ const client = new line.Client({
 
 app.post('/webhook', middleware(config), (req, res) => {
   const userMessage = req.body.events[0].message
+  console.log(req.body.events[0])
   const replyToken = req.body.events[0].replyToken
   let replyMessage = {
     type: 'text',
@@ -25,14 +26,14 @@ app.post('/webhook', middleware(config), (req, res) => {
     case '我的位置':
       replyMessage = {
         "type": "text", // ①
-        "text": "請按下「找我的位置」",
+        "text": "請按下「傳送我的GPS定位」",
         "quickReply": { // ②
           "items": [
             {
               "type": "action", // ④
               "action": {
                 "type": "location",
-                "label": "找我的位置"
+                "label": "傳送我的GPS定位"
               }
             }
           ]
