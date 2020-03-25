@@ -1,7 +1,7 @@
 const axios = require('axios')
 let key = process.env.WEATHER_KEY
 if (!key) key = require('../weather-key')
-const getWeather = (lat, lng) => {
+const getWeather = async (lat, lng) => {
   axios.get(`https://api.darksky.net/forecast/${key}/${lat},${lng}`)
   .then(function (response) {
     // handle success
