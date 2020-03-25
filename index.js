@@ -24,20 +24,15 @@ app.post('/webhook', middleware(config), (req, res) => {
   switch (userMessage.text) {
     case '我的位置':
       replyMessage = {
-        "quickReply": {
+        "type": "text", // ①
+        "text": "請按下「找我的位置」",
+        "quickReply": { // ②
           "items": [
             {
-              "type": "action",
+              "type": "action", // ④
               "action": {
-                "type": "cameraRoll",
-                "label": "Send photo"
-              }
-            },
-            {
-              "type": "action",
-              "action": {
-                "type": "camera",
-                "label": "Open camera"
+                "type": "location",
+                "label": "找我的位置"
               }
             }
           ]
