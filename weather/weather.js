@@ -5,7 +5,8 @@ const getWeather = (lat, lng) => {
   axios.get(`https://api.darksky.net/forecast/${key}/${lat},${lng}`)
   .then(function (response) {
     // handle success
-    console.log(response);
+    console.log(response)
+    return response
   })
   .catch(function (error) {
     // handle error
