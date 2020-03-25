@@ -44,7 +44,7 @@ app.post('/webhook', middleware(config), (req, res) => {
         break;
     }
   } else if (userMessage.type === 'location') {
-    const result = await weather.getWeather(userMessage.latitude, userMessage.longitude)
+    weather.getWeather(userMessage.latitude, userMessage.longitude)
     replyMessage = {
       type: 'text',
       text: `Hello World! ${userMessage.address}`
