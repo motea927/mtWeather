@@ -3,4 +3,4 @@ const config = {
   channelSecret: '2f427c5bfdd8bdbe09d5755f9a65580e'
 }
 
-module.exports = config;
+module.exports = config

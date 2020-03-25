@@ -1,5 +1,6 @@
 const express = require('express')
 const line = require('@line/bot-sdk')
+const weather = require('./weather/weather')
 const middleware = line.middleware
 
 const app = express()
@@ -22,25 +23,33 @@ app.post('/webhook', middleware(config), (req, res) => {
     type: 'text',
     text: `Hello World! ${userMessage.text}`
   }
-  switch (userMessage.text) {
-    case '我的GPS定位':
-      replyMessage = {
-        "type": "text", // ①
-        "text": "請按下「傳送我的GPS定位」",
-        "quickReply": { // ②
-          "items": [
-            {
-              "type": "action", // ④
-              "action": {
-                "type": "location",
-                "label": "傳送我的GPS定位"
+  if (userMessage.type === 'text') {
+    switch (userMessage.text) {
+      case '我的GPS定位':
+        replyMessage = {
+          "type": "text", // ①
+          "text": "請按下「傳送我的GPS定位」",
+          "quickReply": { // ②
+            "items": [
+              {
+                "type": "action", // ④
+                "action": {
+                  "type": "location",
+                  "label": "傳送我的GPS定位"
+                }
               }
-            }
-          ]
+            ]
+          }
         }
-      }
-      break;
+        break;
+    }
+  } else if (userMessage.type === 'location') {
+    replyMessage = {
+      type: 'text',
+      text: `Hello World! ${userMessage.address}`
+    }
   }
+  
   client.replyMessage(replyToken, replyMessage)
 })
 
