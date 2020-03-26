@@ -38,16 +38,14 @@ const lineClient = {
                 "color": "#B8B8B8",
                 "size": "xxl",
                 "offsetStart": "25px",
-                "margin": "md",
-                "weight": "bold"
+                "margin": "md"
               },
               {
                 "type": "text",
                 "text": "潮濕",
                 "color": "#d2d2d2",
                 "size": "lg",
-                "offsetStart": "25px",
-                "weight": "bold"
+                "offsetStart": "25px"
               }
             ],
             "height": "150px"
@@ -217,8 +215,10 @@ const lineClient = {
           },
           "styles": {
             "hero": {
-              "separator": true,
-              "separatorColor": "#FF0000"
+              "backgroundColor": "#FFFFFF33"
+            },
+            "body": {
+              "backgroundColor": "#FFFFFF33"
             }
           }
         }
