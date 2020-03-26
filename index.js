@@ -1,6 +1,5 @@
 const express = require('express')
 const line = require('@line/bot-sdk')
-const weather = require('./weather/weather')
 const middleware = line.middleware
 const config =  require('./config/config')
 const lineClient = require('./lineClient/lineClient')
@@ -17,11 +16,10 @@ app.post('/webhook', middleware(config), (req, res) => {
         break;
       default:
         // lineClient.sendText(replyToken, userMessage.text)
-        lineClient.sendWeatherMessage(replyToken, userMessage.text)
+        lineClient.sendText(replyToken, userMessage.text)
     }
   } else if (userMessage.type === 'location') {
     lineClient.sendWeatherMessage(userMessage.latitude, userMessage.longitude, replyToken, userMessage.address)
-    // weather.getWeather(userMessage.latitude, userMessage.longitude)
     // lineClient.sendText(replyToken, userMessage.address)
   }
 })

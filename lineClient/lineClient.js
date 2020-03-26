@@ -175,7 +175,7 @@ const lineClient = {
   sendText (replyToken, text) {
     replyMessage = {
       type: 'text',
-      text: text
+      text: `"${text}" ? 我看不懂耶，不過草泥馬馬會咩咩咩喔!`
     }
     client.replyMessage(replyToken, replyMessage)
   }
