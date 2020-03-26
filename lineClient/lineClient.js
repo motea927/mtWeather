@@ -10,6 +10,7 @@ const lineClient = {
     const re = /區|鎮|鄉|市/g
     if (address.match(re)) {
       addressEndIndex = address.lastIndexOf(address.match(re).pop())
+      console.log(addressEndIndex)
       address = address.slice(0, addressEndIndex + 1)
     }
     
