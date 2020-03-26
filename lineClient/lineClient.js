@@ -16,6 +16,58 @@ const lineClient = {
     if (weatherResult.currently.icon === 'partly-cloudy-day' || weatherResult.currently.icon === 'partly-cloudy-night') {
       weatherResult.currently.icon = 'cloudy'
     }
+    const weatherData = [
+      {
+        "type": "box",
+        "layout": "baseline",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "時間",
+            "size": "md",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "溫度",
+            "size": "md",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "降雨機率",
+            "size": "md",
+            "weight": "bold"
+          }
+        ]
+      }
+    ]
+    weatherResult.hourly.data.forEach(el => {
+      weatherData.push(
+        {
+          "type": "box",
+          "layout": "baseline",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "text",
+              "text": `${el.time}`,
+              "size": "sm"
+            },
+            {
+              "type": "text",
+              "text": `${el.temperature} °C`,
+              "size": "sm"
+            },
+            {
+              "type": "text",
+              "text": `${Math.round(el.precipProbability * 1000)} %`
+            }
+          ]
+        }
+      )
+    })
     const replyMessage = [
       {
         "type": "flex",
@@ -76,143 +128,7 @@ const lineClient = {
                 "layout": "vertical",
                 "margin": "lg",
                 "spacing": "sm",
-                "contents": [
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "時間",
-                        "size": "md",
-                        "weight": "bold"
-                      },
-                      {
-                        "type": "text",
-                        "text": "溫度",
-                        "size": "md",
-                        "weight": "bold"
-                      },
-                      {
-                        "type": "text",
-                        "text": "降雨機率",
-                        "size": "md",
-                        "weight": "bold"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "17:00",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "28.16°C",
-                        "wrap": true,
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "50%"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "18:00",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "27.21°C",
-                        "wrap": true,
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "50%"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "19:00",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "27.64°C",
-                        "wrap": true,
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "50%"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "20:00",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "28°C",
-                        "wrap": true,
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "50%"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "21:00",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "35°C",
-                        "wrap": true,
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "50%"
-                      }
-                    ]
-                  }
-                ]
+                "contents": weatherData
               }
             ]
           },
