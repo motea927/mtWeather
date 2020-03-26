@@ -9,7 +9,6 @@ function addZeroString (num) {
 const getWeather = async (lat, lng) => {
   try {
     const response = await axios.get(`https://api.darksky.net/forecast/${key}/${lat},${lng}?exclude=minutely,flags&lang=zh-tw&units=si`)
-    console.log(response.data.hourly)
     const currently = response.data.currently
     const hourly = response.data.hourly
     const daily = response.data.daily
@@ -18,11 +17,7 @@ const getWeather = async (lat, lng) => {
       const date = new Date((hourlyData.time + 28800) * 1000)
       hourlyData.time = `${date.getHours()}:${addZeroString(date.getMinutes())}`
     })
-    daily.data.forEach( dailyData => {
-      const date = new Date((dailyData.time + 28800) * 1000)
-      // dailyData.time = `${date.getFullYear()}/${addZeroString(date.getMonth())}/${addZeroString(date.getDate())}`
-      console.log(date)
-    })
+    console.log(daily)
     return {
       currently,
       hourly,
