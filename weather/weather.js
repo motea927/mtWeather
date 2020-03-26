@@ -4,6 +4,7 @@ if (!key) key = require('../weather-key')
 const getWeather = async (lat, lng) => {
   try {
     const response = await axios.get(`https://api.darksky.net/forecast/${key}/${lat},${lng}?exclude=daily&lang=zh-tw&units=si`)
+    console.log(response.data.hourly)
     const hourlyDataArr = response.data.hourly.slice(0, 5)
     hourlyDataArr.forEach((hourlyData) => {
       hourlyData.time = new Date((hourlyData.time + 28800)* 1000)
