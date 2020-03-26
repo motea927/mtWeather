@@ -16,118 +16,126 @@ const lineClient = {
     if (weatherResult.currently.icon === 'partly-cloudy-day' || weatherResult.currently.icon === 'partly-cloudy-night') {
       weatherResult.currently.icon = 'cloudy'
     }
-    const weatherData = [
-      {
-        "type": "box",
-        "layout": "baseline",
-        "spacing": "sm",
-        "contents": [
-          {
-            "type": "text",
-            "text": "時間",
-            "size": "md",
-            "weight": "bold"
-          },
-          {
-            "type": "text",
-            "text": "溫度",
-            "size": "md",
-            "weight": "bold"
-          },
-          {
-            "type": "text",
-            "text": "降雨機率",
-            "size": "md",
-            "weight": "bold"
-          }
-        ]
-      }
-    ]
-    weatherResult.hourly.data.forEach(el => {
-      weatherData.push(
+    const weatherTitle = {
+      "type": "box",
+      "layout": "baseline",
+      "spacing": "sm",
+      "contents": [
         {
+          "type": "text",
+          "text": "時間",
+          "size": "md",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "text": "溫度",
+          "size": "md",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "text": "降雨機率",
+          "size": "md",
+          "weight": "bold"
+        }
+      ]
+    }
+    const finallyData = {'hourly': null, 'daily': null}
+    Object.keys(finallyData).forEach(keys => {
+      console.log(keys)
+      const weatherData = [
+        weatherTitle
+      ]
+      weatherResult[keys].data.forEach(el => {
+        weatherData.push(
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": `${el.time}`,
+                "size": "sm"
+              },
+              {
+                "type": "text",
+                "text": `${el.temperature} °C`,
+                "size": "sm"
+              },
+              {
+                "type": "text",
+                "text": `${Math.round(el.precipProbability * 100)} %`
+              }
+            ]
+          }
+        )
+      })
+      // 
+      const bubbleMessage = {
+        "type": "bubble",
+        "hero": {
           "type": "box",
-          "layout": "baseline",
-          "spacing": "sm",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "image",
+              "url": `https://mt-weather.herokuapp.com/static/${weatherResult.currently.icon}.png`,
+              "align": "end",
+              "offsetEnd": "15px",
+              "offsetTop": "15px",
+              "size": "sm"
+            },
+            {
+              "type": "text",
+              "text": `${weatherResult.currently.temperature} °C`,
+              "color": "#B8B8B8",
+              "size": "xxl",
+              "offsetStart": "25px",
+              "margin": "md"
+            },
+            {
+              "type": "text",
+              "text": `${weatherResult.currently.summary}`,
+              "color": "#d2d2d2",
+              "size": "lg",
+              "offsetStart": "25px"
+            }
+          ],
+          "height": "150px"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
           "contents": [
             {
               "type": "text",
-              "text": `${el.time}`,
-              "size": "sm"
+              "text": address,
+              "weight": "bold",
+              "size": "lg",
+              "margin": "md"
             },
             {
               "type": "text",
-              "text": `${el.temperature} °C`,
-              "size": "sm"
+              "text": `${weatherResult[keys].summary}`,
+              "size": "sm",
+              "color": "#9c9c9c",
+              "margin": "md"
             },
             {
-              "type": "text",
-              "text": `${Math.round(el.precipProbability * 100)} %`
+              "type": "box",
+              "layout": "vertical",
+              "margin": "lg",
+              "spacing": "sm",
+              "contents": weatherData
             }
           ]
         }
-      )
-    })
-    const bubbleMessage = {
-      "type": "bubble",
-      "hero": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": `https://mt-weather.herokuapp.com/static/${weatherResult.currently.icon}.png`,
-            "align": "end",
-            "offsetEnd": "15px",
-            "offsetTop": "15px",
-            "size": "sm"
-          },
-          {
-            "type": "text",
-            "text": `${weatherResult.currently.temperature} °C`,
-            "color": "#B8B8B8",
-            "size": "xxl",
-            "offsetStart": "25px",
-            "margin": "md"
-          },
-          {
-            "type": "text",
-            "text": `${weatherResult.currently.summary}`,
-            "color": "#d2d2d2",
-            "size": "lg",
-            "offsetStart": "25px"
-          }
-        ],
-        "height": "150px"
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": address,
-            "weight": "bold",
-            "size": "lg",
-            "margin": "md"
-          },
-          {
-            "type": "text",
-            "text": `${weatherResult.hourly.summary}`,
-            "size": "sm",
-            "color": "#9c9c9c",
-            "margin": "md"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "margin": "lg",
-            "spacing": "sm",
-            "contents": weatherData
-          }
-        ]
       }
-    }
+      finallyData[keys] = bubbleMessage
+    })
+    
     const replyMessage = [ 
       {
         "type": "flex",
@@ -136,8 +144,7 @@ const lineClient = {
         "contents": {
           "type": "carousel",
           "contents": [
-            bubbleMessage,
-            bubbleMessage
+            ...finallyData
           ]
         }
         

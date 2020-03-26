@@ -19,8 +19,7 @@ const getWeather = async (lat, lng) => {
     })
     daily.data.forEach(dailyData => {
       const date = new Date((dailyData.time + 28800) * 1000)
-      dailyData.time = `${date.getFullYear()} / ${addZeroString(date.getMonth() + 1)} / ${addZeroString(date.getDate())}`
-      console.log(dailyData.time)
+      dailyData.time = `${date.getFullYear()}/${addZeroString(date.getMonth() + 1)}/${addZeroString(date.getDate())}`
     })
     return {
       currently,
