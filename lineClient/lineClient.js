@@ -136,6 +136,7 @@ const lineClient = {
         "contents": {
           "type": "carousel",
           "contents": [
+            bubbleMessage,
             bubbleMessage
           ]
         }
