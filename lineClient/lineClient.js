@@ -12,19 +12,20 @@ const lineClient = {
         text: text
       },
       {
-        type: 'flex',
-        contents: {
-          "type": "bubble", // ①
-          "body": { // ②
-            "type": "box", // ③
-            "layout": "horizontal",　// ④
-            "contents": [ // ⑤
+        "type": "flex",
+        "altText": "This is a Flex Message",
+        "contents": {
+          "type": "bubble",
+          "body": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
               {
-                "type": "text", // ⑥
+                "type": "text",
                 "text": "Hello,"
               },
               {
-                "type": "text", // ⑥
+                "type": "text",
                 "text": "World!"
               }
             ]
