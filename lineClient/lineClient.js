@@ -7,6 +7,9 @@ const client = new line.Client({
 let replyMessage
 const lineClient = {
   async sendWeatherMessage (lat, lng, replyToken, address) {
+    const re = /區|鎮|鄉|市/g
+    addressEndIndex = address.lastIndexOf(address.match(re).pop())
+    address = address.slice(0, addressEndIndex)
     const weatherResult = await weather.getWeather(lat, lng)
     const replyMessage = [
       {
@@ -39,7 +42,7 @@ const lineClient = {
               },
               {
                 "type": "text",
-                "text": `${weatherResult.summary.slice(0, 12)}`,
+                "text": `${weatherResult.summary}`,
                 "size": "sm",
                 "color": "#9c9c9c",
                 "margin": "md"
