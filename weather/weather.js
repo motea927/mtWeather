@@ -11,6 +11,10 @@ const getWeather = async (lat, lng) => {
       const date = new Date((hourlyData.time + 28800)* 1000)
       hourlyData.time = `${date.getHours()}:${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}`
     })
+    return {
+      summary,
+      hourlyDataArr
+    }
     console.log(response.data)
     console.log(hourlyDataArr)
   } catch (err) {
