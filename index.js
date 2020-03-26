@@ -25,5 +25,5 @@ app.post('/webhook', middleware(config), (req, res) => {
     // lineClient.sendText(replyToken, userMessage.address)
   }
 })
-
+app.use('/static', express.static('img'))
 app.listen(process.env.PORT || 8080)
