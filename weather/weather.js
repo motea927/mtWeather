@@ -15,7 +15,7 @@ const getWeather = async (lat, lng) => {
       summary,
       hourlyDataArr
     }
-    console.log(response.data)
+    // console.log(response.data)
     console.log(hourlyDataArr)
   } catch (err) {
     console.error(err)
