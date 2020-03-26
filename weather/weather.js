@@ -7,9 +7,10 @@ const getWeather = async (lat, lng) => {
     const time = [response.data.hourly.data[0].time, response.data.hourly.data[1].time]
     time.forEach((UNIX_Timestamp) => {
       const date = new Date((UNIX_Timestamp + 28800)* 1000)
-      console.log(date.toLocaleString('zh-TW'))
+      // console.log(date.toLocaleString('zh-TW'))
     })
-    console.log(response.data.hourly.data[0])
+    // console.log(response.data.hourly.data[0])
+    console.log(response.data)
   } catch (err) {
     console.error(err)
   }
