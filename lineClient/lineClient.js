@@ -39,7 +39,7 @@ const lineClient = {
               },
               {
                 "type": "text",
-                "text": `${weatherResult.summary}`,
+                "text": `${weatherResult.summary.slice(0, 12)}`,
                 "size": "sm",
                 "color": "#9c9c9c",
                 "margin": "md"
