@@ -17,7 +17,11 @@ const getWeather = async (lat, lng) => {
       const date = new Date((hourlyData.time + 28800) * 1000)
       hourlyData.time = `${date.getHours()}:${addZeroString(date.getMinutes())}`
     })
-    console.log(daily)
+    daily.data.forEach(dailyData => {
+      const date = new Date((dailyData.time + 28800) * 1000)
+      dailyData.time = date.toLocaleDateString('zh-TW')
+      console.log(dailyData.time)
+    })
     return {
       currently,
       hourly,
