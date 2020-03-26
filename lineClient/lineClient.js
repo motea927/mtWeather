@@ -62,7 +62,7 @@ const lineClient = {
             },
             {
               "type": "text",
-              "text": `${Math.round(el.precipProbability * 1000)} %`
+              "text": `${Math.round(el.precipProbability * 100)} %`
             }
           ]
         }
@@ -131,14 +131,6 @@ const lineClient = {
                 "contents": weatherData
               }
             ]
-          },
-          "styles": {
-            "hero": {
-              "backgroundColor": "#FFFFFF33"
-            },
-            "body": {
-              "backgroundColor": "#FFFFFF33"
-            }
           }
         }
         // contents end
