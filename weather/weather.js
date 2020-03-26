@@ -19,7 +19,7 @@ const getWeather = async (lat, lng) => {
     })
     daily.data.forEach(dailyData => {
       const date = new Date((dailyData.time + 28800) * 1000)
-      dailyData.time = date.toLocaleDateString('zh-TW')
+      dailyData.time = `${date.getFullYear()} / ${date.getMonth()} / ${date.getDate()}`
       console.log(dailyData.time)
     })
     return {
