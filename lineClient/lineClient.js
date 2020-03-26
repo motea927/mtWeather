@@ -10,6 +10,23 @@ const lineClient = {
       {
       type: 'text',
       text: text
+      },
+      {
+        "type": "bubble", // ①
+        "body": { // ②
+          "type": "box", // ③
+          "layout": "horizontal",　// ④
+          "contents": [ // ⑤
+            {
+              "type": "text", // ⑥
+              "text": "Hello,"
+            },
+            {
+              "type": "text", // ⑥
+              "text": "World!"
+            }
+          ]
+        }
       }
   ]
     client.replyMessage(replyToken, replyMessage)
