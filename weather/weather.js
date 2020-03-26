@@ -5,7 +5,7 @@ const getWeather = async (lat, lng) => {
   try {
     const response = await axios.get(`https://api.darksky.net/forecast/${key}/${lat},${lng}?exclude=daily&lang=zh-tw&units=si`)
     console.log(response.data.hourly)
-    const summary = response.data.hourly.summary
+    const summary = response.data.currently.summary
     const hourlyDataArr = response.data.hourly.data.slice(0, 5)
     hourlyDataArr.forEach((hourlyData) => {
       const date = new Date((hourlyData.time + 28800)* 1000)
