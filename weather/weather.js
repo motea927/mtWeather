@@ -20,7 +20,7 @@ const getWeather = async (lat, lng) => {
     daily.data.forEach(dailyData => {
       const date = new Date((dailyData.time + 28800) * 1000)
       dailyData.time = `${addZeroString(date.getMonth() + 1)}/${addZeroString(date.getDate())}`
-      dailyData.temperature = `${dailyData.temperatureMin} ~ ${dailyData.temperatureMax}`
+      dailyData.temperature = `${dailyData.temperatureMin.toFixed(1)}~${dailyData.temperatureMax.toFixed(1)}`
     })
     return {
       currently,
