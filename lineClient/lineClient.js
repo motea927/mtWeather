@@ -59,7 +59,7 @@ const lineClient = {
             "contents": [
               {
                 "type": "text",
-                "text": "台北市中正區",
+                "text": address,
                 "weight": "bold",
                 "size": "lg",
                 "margin": "md"
