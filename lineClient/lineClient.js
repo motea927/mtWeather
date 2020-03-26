@@ -54,13 +54,13 @@ const lineClient = {
           },
           {
             "type": "text",
-            "text": `${element.temperature}°C`,
+            "text": `${element.temperature} °C`,
             "wrap": true,
             "size": "sm"
           },
           {
             "type": "text",
-            "text": `${element.precipProbability * 100}%`
+            "text": `${math.round(element.precipProbability * 100)}%`
           }
         ]
       })
