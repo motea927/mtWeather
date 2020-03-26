@@ -21,13 +21,14 @@ const getWeather = async (lat, lng) => {
     daily.data.forEach( dailyData => {
       const date = new Date((dailyData.time + 28800) * 1000)
       dailyData.time = `${date.getFullYear()}/${addZeroString(date.getMonth())}/${addZeroString(date.getDate())}`
+      console.log(dailyData.time)
     })
     return {
       currently,
       hourly,
       daily
     }
-    console.log(daily.data)
+    // console.log(daily.data)
     // console.log(hourlyDataArr)
   } catch (err) {
     console.error(err)
