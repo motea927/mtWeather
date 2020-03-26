@@ -13,6 +13,9 @@ const lineClient = {
       address = address.slice(0, addressEndIndex + 1)
     }
     const weatherResult = await weather.getWeather(lat, lng)
+    if (weatherResult.currently.icon === 'partly-cloudy-day' || weatherResult.currently.icon === 'partly-cloudy-night') {
+      weatherResult.currently.icon = 'cloudy'
+    }
     const replyMessage = [
       {
         "type": "flex",
@@ -26,7 +29,7 @@ const lineClient = {
             "contents": [
               {
                 "type": "image",
-                "url": "https://mt-weather.herokuapp.com/static/rain.png",
+                "url": `https://mt-weather.herokuapp.com/static/${weatherResult.currently.icon}.png`,
                 "align": "end",
                 "offsetEnd": "15px",
                 "offsetTop": "15px",
@@ -34,7 +37,7 @@ const lineClient = {
               },
               {
                 "type": "text",
-                "text": "28.16°C",
+                "text": `${weatherResult.currently.temperature} °C`,
                 "color": "#B8B8B8",
                 "size": "xxl",
                 "offsetStart": "25px",
@@ -42,7 +45,7 @@ const lineClient = {
               },
               {
                 "type": "text",
-                "text": "潮濕",
+                "text": `${weatherResult.currently.summary}`,
                 "color": "#d2d2d2",
                 "size": "lg",
                 "offsetStart": "25px"
