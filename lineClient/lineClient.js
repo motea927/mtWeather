@@ -66,7 +66,7 @@ const lineClient = {
               },
               {
                 "type": "text",
-                "text": "小雨持續至明晚。",
+                "text": `${weatherResult.hourly.summary}`,
                 "size": "sm",
                 "color": "#9c9c9c",
                 "margin": "md"
