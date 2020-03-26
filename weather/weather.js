@@ -9,7 +9,7 @@ const getWeather = async (lat, lng) => {
     const hourlyDataArr = response.data.hourly.data.slice(0, 5)
     hourlyDataArr.forEach((hourlyData) => {
       const date = new Date((hourlyData.time + 28800)* 1000)
-      hourlyData.time = `${date.getHours()}:${date.getMinutes()}`
+      hourlyData.time = `${date.getHours()}:${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}`
     })
     console.log(response.data)
     console.log(hourlyDataArr)
