@@ -68,9 +68,9 @@ const lineClient = {
         }
       )
     })
-    const replyMessage = [
+    const replyMessage = [ 
       {
-        "type": "flex",
+        "type": "carousel",
         "altText": "未來六小時天氣",
         // contents
         "contents": {
