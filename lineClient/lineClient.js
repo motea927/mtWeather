@@ -29,7 +29,8 @@ const lineClient = {
                 "url": "https://mt-weather.herokuapp.com/static/rain.png",
                 "align": "end",
                 "offsetEnd": "15px",
-                "offsetTop": "15px"
+                "offsetTop": "15px",
+                "size": "sm"
               },
               {
                 "type": "text",
@@ -37,17 +38,19 @@ const lineClient = {
                 "color": "#B8B8B8",
                 "size": "xxl",
                 "offsetStart": "25px",
-                "margin": "md"
+                "margin": "md",
+                "weight": "bold"
               },
               {
                 "type": "text",
                 "text": "潮濕",
                 "color": "#d2d2d2",
                 "size": "lg",
-                "offsetStart": "25px"
+                "offsetStart": "25px",
+                "weight": "bold"
               }
             ],
-            "height": "170px"
+            "height": "150px"
           },
           "body": {
             "type": "box",
@@ -214,11 +217,8 @@ const lineClient = {
           },
           "styles": {
             "hero": {
-              "separator": false,
-              "backgroundColor": "#ebebeb33"
-            },
-            "body": {
-              "backgroundColor": "#ebebeb33"
+              "separator": true,
+              "separatorColor": "#FF0000"
             }
           }
         }
