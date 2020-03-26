@@ -8,8 +8,11 @@ let replyMessage
 const lineClient = {
   async sendWeatherMessage (lat, lng, replyToken, address) {
     const re = /區|鎮|鄉|市/g
-    addressEndIndex = address.lastIndexOf(address.match(re).pop())
-    address = address.slice(0, addressEndIndex)
+    if (address.match(re)) {
+      addressEndIndex = address.lastIndexOf(address.match(re).pop())
+      address = address.slice(0, addressEndIndex + 1)
+    }
+    
     const weatherResult = await weather.getWeather(lat, lng)
     const replyMessage = [
       {
