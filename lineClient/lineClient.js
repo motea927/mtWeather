@@ -11,25 +11,186 @@ const lineClient = {
     const replyMessage = [
       {
         "type": "flex",
-        "altText": "this is a flex message",
-        //123456
+        "altText": "未來六小時天氣",
+        // contents
         "contents": {
           "type": "bubble",
+          "hero": {
+            "type": "image",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "action": {
+              "type": "uri",
+              "uri": "http://linecorp.com/"
+            }
+          },
           "body": {
             "type": "box",
             "layout": "vertical",
             "contents": [
               {
                 "type": "text",
-                "text": "address"
+                "text": `${address}`,
+                "weight": "bold",
+                "size": "lg",
+                "margin": "md"
               },
               {
                 "type": "text",
-                "text": "world"
+                "text": `${weatherResult.summary}`,
+                "size": "sm",
+                "color": "#9c9c9c",
+                "margin": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "margin": "lg",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "baseline",
+                    "spacing": "sm",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "時間",
+                        "size": "md",
+                        "weight": "bold"
+                      },
+                      {
+                        "type": "text",
+                        "text": "溫度",
+                        "size": "md",
+                        "weight": "bold"
+                      },
+                      {
+                        "type": "text",
+                        "text": "降雨機率",
+                        "size": "md",
+                        "weight": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "baseline",
+                    "spacing": "sm",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "17:00",
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "23°C",
+                        "wrap": true,
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "50%"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "baseline",
+                    "spacing": "sm",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "18:00",
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "24°C",
+                        "wrap": true,
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "50%"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "baseline",
+                    "spacing": "sm",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "19:00",
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "26°C",
+                        "wrap": true,
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "50%"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "baseline",
+                    "spacing": "sm",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "20:00",
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "28°C",
+                        "wrap": true,
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "50%"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "baseline",
+                    "spacing": "sm",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "21:00",
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "35°C",
+                        "wrap": true,
+                        "size": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "50%"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
         }
+        // contents end
       }
     ]
     client.replyMessage(replyToken, replyMessage)
