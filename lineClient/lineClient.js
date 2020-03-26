@@ -35,7 +35,15 @@ const lineClient = {
                 "type": "text",
                 "text": "台北市中正區",
                 "weight": "bold",
-                "size": "xl"
+                "size": "lg",
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "text": "小雨持續至明晚。",
+                "size": "sm",
+                "color": "#9c9c9c",
+                "margin": "md"
               },
               {
                 "type": "box",
@@ -51,21 +59,18 @@ const lineClient = {
                       {
                         "type": "text",
                         "text": "時間",
-                        "color": "#aaaaaa",
                         "size": "md",
                         "weight": "bold"
                       },
                       {
                         "type": "text",
                         "text": "溫度",
-                        "color": "#aaaaaa",
                         "size": "md",
                         "weight": "bold"
                       },
                       {
                         "type": "text",
                         "text": "降雨機率",
-                        "color": "#aaaaaa",
                         "size": "md",
                         "weight": "bold"
                       }
@@ -184,38 +189,6 @@ const lineClient = {
                 ]
               }
             ]
-          },
-          "footer": {
-            "type": "box",
-            "layout": "vertical",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "button",
-                "style": "link",
-                "height": "sm",
-                "action": {
-                  "type": "uri",
-                  "label": "CALL",
-                  "uri": "https://linecorp.com"
-                }
-              },
-              {
-                "type": "button",
-                "style": "link",
-                "height": "sm",
-                "action": {
-                  "type": "uri",
-                  "label": "WEBSITE",
-                  "uri": "https://linecorp.com"
-                }
-              },
-              {
-                "type": "spacer",
-                "size": "sm"
-              }
-            ],
-            "flex": 0
           }
         }
       }
