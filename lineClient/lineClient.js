@@ -10,11 +10,61 @@ const lineClient = {
     const re = /區|鎮|鄉|市/g
     if (address.match(re)) {
       addressEndIndex = address.lastIndexOf(address.match(re).pop())
-      console.log(addressEndIndex)
       address = address.slice(0, addressEndIndex + 1)
     }
     
     const weatherResult = await weather.getWeather(lat, lng)
+    const data = [
+      {
+        "type": "box",
+        "layout": "baseline",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "時間",
+            "size": "md",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "溫度",
+            "size": "md",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "降雨機率",
+            "size": "md",
+            "weight": "bold"
+          }
+        ]
+      }
+    ]
+    weatherResult.hourlyDataArr.forEach(element => {
+      data.push({
+        "type": "box",
+        "layout": "baseline",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": `${element.time}`,
+            "size": "sm"
+          },
+          {
+            "type": "text",
+            "text": `${element.temperature}°C`,
+            "wrap": true,
+            "size": "sm"
+          },
+          {
+            "type": "text",
+            "text": `${element.precipProbability * 100}%`
+          }
+        ]
+      })
+    });
     const replyMessage = [
       {
         "type": "flex",
@@ -56,143 +106,7 @@ const lineClient = {
                 "layout": "vertical",
                 "margin": "lg",
                 "spacing": "sm",
-                "contents": [
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "時間",
-                        "size": "md",
-                        "weight": "bold"
-                      },
-                      {
-                        "type": "text",
-                        "text": "溫度",
-                        "size": "md",
-                        "weight": "bold"
-                      },
-                      {
-                        "type": "text",
-                        "text": "降雨機率",
-                        "size": "md",
-                        "weight": "bold"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "17:00",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "23°C",
-                        "wrap": true,
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "50%"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "18:00",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "24°C",
-                        "wrap": true,
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "50%"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "19:00",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "26°C",
-                        "wrap": true,
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "50%"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "20:00",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "28°C",
-                        "wrap": true,
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "50%"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "21:00",
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "35°C",
-                        "wrap": true,
-                        "size": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "50%"
-                      }
-                    ]
-                  }
-                ]
+                "contents": data
               }
             ]
           }
