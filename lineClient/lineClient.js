@@ -133,7 +133,13 @@ const lineClient = {
         "type": "flex",
         "altText": "未來六小時天氣",
         // contents
-        "contents": bubbleMessage
+        "contents": {
+          "type": "carousel",
+          "contents": [
+            bubbleMessage
+          ]
+        }
+        
         // contents end
       }
     ]
