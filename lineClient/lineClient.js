@@ -60,7 +60,7 @@ const lineClient = {
           },
           {
             "type": "text",
-            "text": `${math.round(element.precipProbability * 100)}%`
+            "text": `${Math.round(element.precipProbability * 100)}%`
           }
         ]
       })
