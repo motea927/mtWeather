@@ -211,6 +211,15 @@ const lineClient = {
                 ]
               }
             ]
+          },
+          "styles": {
+            "hero": {
+              "separator": false,
+              "backgroundColor": "#ebebeb33"
+            },
+            "body": {
+              "backgroundColor": "#ebebeb33"
+            }
           }
         }
         // contents end
