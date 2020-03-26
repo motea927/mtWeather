@@ -143,7 +143,8 @@ const lineClient = {
         "contents": {
           "type": "carousel",
           "contents": [
-            ...finallyData
+            finallyData['hourly'],
+            finallyData['daily'],
           ]
         }
         
