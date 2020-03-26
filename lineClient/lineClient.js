@@ -135,7 +135,6 @@ const lineClient = {
       }
       finallyData[keys] = bubbleMessage
     })
-    
     const replyMessage = [ 
       {
         "type": "flex",
@@ -151,6 +150,7 @@ const lineClient = {
         // contents end
       }
     ]
+    
     client.replyMessage(replyToken, replyMessage)
   },
   sendLocationBtn (replyToken) {
