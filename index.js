@@ -16,7 +16,8 @@ app.post('/webhook', middleware(config), (req, res) => {
         lineClient.sendLocationBtn(replyToken)
         break;
       default:
-        lineClient.sendText(replyToken, userMessage.text)
+        // lineClient.sendText(replyToken, userMessage.text)
+        lineClient.sendWeatherMessage(replyToken)
     }
   } else if (userMessage.type === 'location') {
     weather.getWeather(userMessage.latitude, userMessage.longitude)
