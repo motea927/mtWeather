@@ -1,5 +1,6 @@
 const config =  require('../config/config')
 const line = require('@line/bot-sdk')
+const weather = require('../weather/weather')
 const client = new line.Client({
   channelAccessToken: config.channelAccessToken
 })
