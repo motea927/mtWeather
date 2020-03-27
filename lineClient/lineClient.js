@@ -120,7 +120,7 @@ const lineClient = {
         "contents": {
           "type": "carousel",
           "contents": [
-            ...locationMap.bubbleMessage
+            ...locationMap['bubbleMessage']
           ]
         }
         // contents end
