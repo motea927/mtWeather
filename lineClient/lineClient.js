@@ -21,7 +21,7 @@ const lineClient = {
                 "actions": [
                     {
                         "type": "postback",
-                        "label": "Buy",
+                        "label": "台北市",
                         "data": "action=buy&itemid=111"
                     },
                     {
