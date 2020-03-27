@@ -35,7 +35,12 @@ const lineClient = {
                         "type": "postback",
                         "label": "基隆市",
                         "data": "基隆市"
-                    }
+                    },
+                    {
+                      "type": "postback",
+                      "label": "高雄市",
+                      "data": "高雄市"
+                  }
                 ]
               },
               {
