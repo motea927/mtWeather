@@ -6,7 +6,7 @@ const client = new line.Client({
 })
 let replyMessage
 const lineClient = {
-  sendLocationList () {
+  sendLocationList (replyToken) {
     const bubbleMessage = {
       "type": "template",
       "altText": "This is a buttons template",
@@ -56,6 +56,7 @@ const lineClient = {
         // contents end
       }
     ]
+    client.replyMessage(replyToken, replyMessage)
   },
   async sendWeatherMessage (lat, lng, replyToken, address) {
     const re = /區|鎮|鄉|市/g

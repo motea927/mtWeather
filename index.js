@@ -16,7 +16,7 @@ app.post('/webhook', middleware(config), (req, res) => {
         break
       case '自行選取地區':
         // do someing
-        lineClient.sendLocationList()
+        lineClient.sendLocationList(replyToken)
         break
       default:
         // lineClient.sendText(replyToken, userMessage.text)
