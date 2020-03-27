@@ -18,20 +18,25 @@ const lineClient = {
                 "imageBackgroundColor": "#FFFFFF",
                 "title": "北部地區",
                 "text": "北北基桃竹苗",
+                "defaultAction": {
+                    "type": "uri",
+                    "label": "View detail",
+                    "uri": "http://example.com/page/123"
+                },
                 "actions": [
                     {
                         "type": "postback",
-                        "label": "台北市",
+                        "label": "Buy",
                         "data": "action=buy&itemid=111"
                     },
                     {
                         "type": "postback",
-                        "label": "心北市",
+                        "label": "Add to cart",
                         "data": "action=add&itemid=111"
                     },
                     {
-                        "type": "postback",
-                        "label": "基隆市",
+                        "type": "uri",
+                        "label": "View detail",
                         "uri": "http://example.com/page/111"
                     }
                 ]
