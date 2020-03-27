@@ -16,7 +16,7 @@ const getWeather = async (lat, lng) => {
     hourly.data = hourly.data.slice(0, 6)
     hourly.data.forEach( hourlyData => {
       const date = new Date((hourlyData.time + 28800) * 1000)
-      hourlyData.time = `${date.getHours()}:${addZeroString(date.getMinutes())}`
+      hourlyData.time = `${addZeroString(date.getHours())}:${addZeroString(date.getMinutes())}`
     })
     daily.data.forEach(dailyData => {
       const date = new Date((dailyData.time + 28800) * 1000)

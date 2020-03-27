@@ -14,6 +14,8 @@ app.post('/webhook', middleware(config), (req, res) => {
       case '我的GPS定位':
         lineClient.sendLocationBtn(replyToken)
         break;
+      case '自行選取地區':
+        // do someing
       default:
         // lineClient.sendText(replyToken, userMessage.text)
         lineClient.sendText(replyToken, userMessage.text)
