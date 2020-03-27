@@ -45,21 +45,6 @@ const lineClient = {
     const bubbleMessageArr = []
     locationMap.forEach((valueObj, key, map) => {
       const bubbleMessageContents = []
-      valueObj.city.forEach(el => {
-        bubbleMessageContents.push(
-          {
-            "type": "button",
-            "style": "link",
-            "height": "sm",
-            "action": {
-              "type": "postback",
-              "label": `${el}`,
-              "data": `${el}`,
-              "displayText": `${el}`
-            }
-          }
-        )
-      })
       bubbleMessageArr.push({
         "type": "bubble",
         "hero": {
@@ -102,7 +87,17 @@ const lineClient = {
           "type": "box",
           "layout": "vertical",
           "spacing": "sm",
-          "contents": bubbleMessageContents,
+          "contents": {
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+              "type": "postback",
+              "label": `台北`,
+              "data": `台北`,
+              "displayText": `台北`
+            }
+          },
           "flex": 0
         }
       }
