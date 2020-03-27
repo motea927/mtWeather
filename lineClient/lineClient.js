@@ -8,58 +8,153 @@ let replyMessage
 const lineClient = {
   sendLocationList (replyToken) {
     const bubbleMessage = {
-      "type": "template",
-      "altText": "this is a carousel template",
-      "template": {
-          "type": "carousel",
-          "columns": [
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "action": {
+          "type": "uri",
+          "uri": "http://linecorp.com/"
+        }
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Brown Cafe",
+            "weight": "bold",
+            "size": "xl"
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "margin": "md",
+            "contents": [
               {
-                "thumbnailImageUrl": "https://www.travel.taipei/image/64607/1024x768",
-                "imageBackgroundColor": "#FFFFFF",
-                "title": "北部地區",
-                "text": "北北基桃竹苗",
-                "actions": [
-                    {
-                        "type": "postback",
-                        "label": "台北市",
-                        "data": "台北市",
-                        "displayText": "台北市"
-                    },
-                    {
-                        "type": "postback",
-                        "label": "新北市",
-                        "data": "新北市",
-                        "displayText": "新北市"
-                    }
+                "type": "icon",
+                "size": "sm",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+              },
+              {
+                "type": "icon",
+                "size": "sm",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+              },
+              {
+                "type": "icon",
+                "size": "sm",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+              },
+              {
+                "type": "icon",
+                "size": "sm",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+              },
+              {
+                "type": "icon",
+                "size": "sm",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+              },
+              {
+                "type": "text",
+                "text": "4.0",
+                "size": "sm",
+                "color": "#999999",
+                "margin": "md",
+                "flex": 0
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "lg",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "Place",
+                    "color": "#aaaaaa",
+                    "size": "sm",
+                    "flex": 1
+                  },
+                  {
+                    "type": "text",
+                    "text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
+                    "wrap": true,
+                    "color": "#666666",
+                    "size": "sm",
+                    "flex": 5
+                  }
                 ]
               },
               {
-                "thumbnailImageUrl": "https://www.travel.taipei/image/64607/1024x768",
-                "imageBackgroundColor": "#FFFFFF",
-                "title": "北部地區",
-                "text": "北北基桃竹苗",
-                "actions": [
-                    {
-                        "type": "postback",
-                        "label": "台北市",
-                        "data": "台北市",
-                        "displayText": "台北市"
-                    },
-                    {
-                        "type": "postback",
-                        "label": "新北市",
-                        "data": "新北市"
-                    },
-                    {
-                        "type": "postback",
-                        "label": "基隆市",
-                        "data": "基隆市"
-                    }
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "Time",
+                    "color": "#aaaaaa",
+                    "size": "sm",
+                    "flex": 1
+                  },
+                  {
+                    "type": "text",
+                    "text": "10:00 - 23:00",
+                    "wrap": true,
+                    "color": "#666666",
+                    "size": "sm",
+                    "flex": 5
+                  }
                 ]
               }
-          ],
-          "imageAspectRatio": "rectangle",
-          "imageSize": "cover"
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+              "type": "uri",
+              "label": "CALL",
+              "uri": "https://linecorp.com"
+            }
+          },
+          {
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+              "type": "uri",
+              "label": "WEBSITE",
+              "uri": "https://linecorp.com"
+            }
+          },
+          {
+            "type": "spacer",
+            "size": "sm"
+          }
+        ],
+        "flex": 0
       }
     }
     const replyMessage = [ 
@@ -76,7 +171,7 @@ const lineClient = {
         // contents end
       }
     ]
-    client.replyMessage(replyToken, bubbleMessage)
+    client.replyMessage(replyToken, replyMessage)
   },
   async sendWeatherMessage (lat, lng, replyToken, address) {
     const re = /區|鎮|鄉|市/g
