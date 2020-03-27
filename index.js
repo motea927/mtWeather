@@ -25,6 +25,8 @@ app.post('/webhook', middleware(config), (req, res) => {
   } else if (userMessage.type === 'location') {
     lineClient.sendWeatherMessage(userMessage.latitude, userMessage.longitude, replyToken, userMessage.address)
     // lineClient.sendText(replyToken, userMessage.address)
+  } else if (userMessage.type === 'postback') {
+    // select some locatioon, userMessage.postback.data = '台北市'
   }
 })
 app.use('/static', express.static('img'))
