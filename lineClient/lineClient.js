@@ -104,29 +104,54 @@ const lineClient = {
                       "data": "hello",
                       "displayText": "hello"
                     }
+                  }
+                ],
+                "flex": 0
+              }
+            },
+            {
+              "type": "bubble",
+              "hero": {
+                "type": "image",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "action": {
+                  "type": "uri",
+                  "uri": "http://linecorp.com/"
+                },
+                "url": "https://www.travel.taipei/image/64607/1024x768"
+              },
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "北部地區",
+                    "weight": "bold",
+                    "size": "xl"
                   },
                   {
-                    "type": "button",
-                    "style": "link",
-                    "height": "sm",
-                    "action": {
-                      "type": "postback",
-                      "label": "hello",
-                      "data": "hello",
-                      "displayText": "hello"
-                    }
+                    "type": "text",
+                    "text": "北北基彰中桃苗",
+                    "size": "sm",
+                    "offsetStart": "1px",
+                    "color": "#707070",
+                    "margin": "xs"
                   },
                   {
-                    "type": "button",
-                    "style": "link",
-                    "height": "sm",
-                    "action": {
-                      "type": "postback",
-                      "label": "hello",
-                      "data": "hello",
-                      "displayText": "hello"
-                    }
-                  },
+                    "type": "separator",
+                    "color": "#70707033",
+                    "margin": "md"
+                  }
+                ]
+              },
+              "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
                   {
                     "type": "button",
                     "style": "link",
