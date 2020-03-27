@@ -16,56 +16,23 @@ const lineClient = {
               {
                 "thumbnailImageUrl": "https://www.travel.taipei/image/64607/1024x768",
                 "imageBackgroundColor": "#FFFFFF",
-                "title": "this is menu",
-                "text": "description",
-                "defaultAction": {
-                    "type": "uri",
-                    "label": "View detail",
-                    "uri": "http://example.com/page/123"
-                },
+                "title": "北部地區",
+                "text": "北北基桃竹苗",
                 "actions": [
                     {
                         "type": "postback",
-                        "label": "Buy",
+                        "label": "台北市",
                         "data": "action=buy&itemid=111"
                     },
                     {
                         "type": "postback",
-                        "label": "Add to cart",
+                        "label": "心北市",
                         "data": "action=add&itemid=111"
                     },
                     {
-                        "type": "uri",
-                        "label": "View detail",
+                        "type": "postback",
+                        "label": "基隆市",
                         "uri": "http://example.com/page/111"
-                    }
-                ]
-              },
-              {
-                "thumbnailImageUrl": "https://example.com/bot/images/item2.jpg",
-                "imageBackgroundColor": "#000000",
-                "title": "this is menu",
-                "text": "description",
-                "defaultAction": {
-                    "type": "uri",
-                    "label": "View detail",
-                    "uri": "http://example.com/page/222"
-                },
-                "actions": [
-                    {
-                        "type": "postback",
-                        "label": "Buy",
-                        "data": "action=buy&itemid=222"
-                    },
-                    {
-                        "type": "postback",
-                        "label": "Add to cart",
-                        "data": "action=add&itemid=222"
-                    },
-                    {
-                        "type": "uri",
-                        "label": "View detail",
-                        "uri": "http://example.com/page/222"
                     }
                 ]
               }
