@@ -111,7 +111,7 @@ const lineClient = {
         }
       }
     })
-    console.log(locationMap.get('out'))
+    const bubbleMessageArr = locationMap.map(el => el.bubbleMessage)
     const replyMessage = [ 
       {
         "type": "flex",
@@ -119,11 +119,8 @@ const lineClient = {
         // contents
         "contents": {
           "type": "carousel",
-          "contents": [
-            ...locationMap['bubbleMessage']
-          ]
+          "contents": bubbleMessageArr
         }
-        // contents end
       }
     ]
     client.replyMessage(replyToken, replyMessage)
