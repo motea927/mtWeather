@@ -13,9 +13,11 @@ app.post('/webhook', middleware(config), (req, res) => {
     switch (userMessage.text) {
       case '我的GPS定位':
         lineClient.sendLocationBtn(replyToken)
-        break;
+        break
       case '自行選取地區':
         // do someing
+        lineClient.sendLocationList()
+        break
       default:
         // lineClient.sendText(replyToken, userMessage.text)
         lineClient.sendText(replyToken, userMessage.text)
