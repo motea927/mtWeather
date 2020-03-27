@@ -35,6 +35,29 @@ const lineClient = {
                         "data": "基隆市"
                     }
                 ]
+              },
+              {
+                "thumbnailImageUrl": "https://www.travel.taipei/image/64607/1024x768",
+                "imageBackgroundColor": "#FFFFFF",
+                "title": "北部地區",
+                "text": "北北基桃竹苗",
+                "actions": [
+                    {
+                        "type": "postback",
+                        "label": "台北市",
+                        "data": "台北市"
+                    },
+                    {
+                        "type": "postback",
+                        "label": "新北市",
+                        "data": "新北市"
+                    },
+                    {
+                        "type": "postback",
+                        "label": "基隆市",
+                        "data": "基隆市"
+                    }
+                ]
               }
           ],
           "imageAspectRatio": "rectangle",
