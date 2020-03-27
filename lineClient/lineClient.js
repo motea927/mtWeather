@@ -22,12 +22,14 @@ const lineClient = {
                     {
                         "type": "postback",
                         "label": "台北市",
-                        "data": "台北市"
+                        "data": "台北市",
+                        "displayText": "台北市"
                     },
                     {
                         "type": "postback",
                         "label": "新北市",
-                        "data": "新北市"
+                        "data": "新北市",
+                        "displayText": "新北市"
                     },
                     {
                         "type": "postback",
@@ -45,7 +47,8 @@ const lineClient = {
                     {
                         "type": "postback",
                         "label": "台北市",
-                        "data": "台北市"
+                        "data": "台北市",
+                        "displayText": "台北市"
                     },
                     {
                         "type": "postback",
