@@ -30,11 +30,6 @@ const lineClient = {
                         "label": "新北市",
                         "data": "新北市",
                         "displayText": "新北市"
-                    },
-                    {
-                        "type": "postback",
-                        "label": "基隆市",
-                        "data": "基隆市"
                     }
                 ]
               },
