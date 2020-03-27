@@ -14,7 +14,7 @@ const lineClient = {
           "type": "carousel",
           "columns": [
               {
-                "thumbnailImageUrl": "https://example.com/bot/images/item1.jpg",
+                "thumbnailImageUrl": "https://www.travel.taipei/image/64607/1024x768",
                 "imageBackgroundColor": "#FFFFFF",
                 "title": "this is menu",
                 "text": "description",
