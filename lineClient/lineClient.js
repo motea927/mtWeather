@@ -105,8 +105,7 @@ const lineClient = {
                       "displayText": "hello"
                     }
                   }
-                ],
-                "flex": 0
+                ]
               }
             },
             {
@@ -175,7 +174,6 @@ const lineClient = {
                     }
                   }
                 ],
-                "flex": 0
               }
             }
           ]
