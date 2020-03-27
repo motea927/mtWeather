@@ -56,7 +56,7 @@ const lineClient = {
         // contents end
       }
     ]
-    client.replyMessage(replyToken, replyMessage)
+    client.replyMessage(replyToken, bubbleMessage)
   },
   async sendWeatherMessage (lat, lng, replyToken, address) {
     const re = /區|鎮|鄉|市/g
