@@ -18,11 +18,6 @@ const lineClient = {
                 "imageBackgroundColor": "#FFFFFF",
                 "title": "北部地區",
                 "text": "北北基桃竹苗",
-                "defaultAction": {
-                    "type": "uri",
-                    "label": "View detail",
-                    "uri": "http://example.com/page/123"
-                },
                 "actions": [
                     {
                         "type": "postback",
