@@ -162,6 +162,17 @@ const lineClient = {
                       "data": "hello",
                       "displayText": "hello"
                     }
+                  },
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "height": "sm",
+                    "action": {
+                      "type": "postback",
+                      "label": "hello",
+                      "data": "hello",
+                      "displayText": "hello"
+                    }
                   }
                 ],
                 "flex": 0
