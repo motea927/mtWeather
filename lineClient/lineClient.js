@@ -47,101 +47,71 @@ const lineClient = {
         }
       ]
     ])
-    locationMap.forEach((value, key, map) => {
-      value.bubbleMessage = 'gg3be0'
+    locationMap.forEach((valueObj, key, map) => {
+      const bubbleMessageContents = []
+      valueObj.city.forEach(el => {
+        bubbleMessageContents.push(
+          {
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+              "type": "postback",
+              "label": `${el}`,
+              "data": `${el}`,
+              "displayText": `${el}`
+            }
+          }
+        )
+      })
+      valueObj.bubbleMessage = {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "aspectMode": "cover",
+          "action": {
+            "type": "uri",
+            "uri": "http://linecorp.com/"
+          },
+          "url": "https://www.travel.taipei/image/64607/1024x768"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": `${valueObj.title}`,
+              "weight": "bold",
+              "size": "xl"
+            },
+            {
+              "type": "text",
+              "text": `${valueObj.subtitle}`,
+              "size": "sm",
+              "offsetStart": "1px",
+              "color": "#707070",
+              "margin": "xs"
+            },
+            {
+              "type": "separator",
+              "color": "#70707033",
+              "margin": "md"
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": bubbleMessageContents,
+          "flex": 0
+        }
+      }
     })
     console.log(locationMap.get('out'))
-    const bubbleMessage = {
-      "type": "bubble",
-      "hero": {
-        "type": "image",
-        "size": "full",
-        "aspectRatio": "20:13",
-        "aspectMode": "cover",
-        "action": {
-          "type": "uri",
-          "uri": "http://linecorp.com/"
-        },
-        "url": "https://www.travel.taipei/image/64607/1024x768"
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "北部地區",
-            "weight": "bold",
-            "size": "xl"
-          },
-          {
-            "type": "text",
-            "text": "北北基彰中桃苗",
-            "size": "sm",
-            "offsetStart": "1px",
-            "color": "#707070",
-            "margin": "xs"
-          },
-          {
-            "type": "separator",
-            "color": "#70707033",
-            "margin": "md"
-          }
-        ]
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "sm",
-        "contents": [
-          {
-            "type": "button",
-            "style": "link",
-            "height": "sm",
-            "action": {
-              "type": "postback",
-              "label": "hello",
-              "data": "hello",
-              "displayText": "hello"
-            }
-          },
-          {
-            "type": "button",
-            "style": "link",
-            "height": "sm",
-            "action": {
-              "type": "postback",
-              "label": "hello",
-              "data": "hello",
-              "displayText": "hello"
-            }
-          },
-          {
-            "type": "button",
-            "style": "link",
-            "height": "sm",
-            "action": {
-              "type": "postback",
-              "label": "hello",
-              "data": "hello",
-              "displayText": "hello"
-            }
-          },
-          {
-            "type": "button",
-            "style": "link",
-            "height": "sm",
-            "action": {
-              "type": "postback",
-              "label": "hello",
-              "data": "hello",
-              "displayText": "hello"
-            }
-          }
-        ],
-        "flex": 0
-      }
-    }
     const replyMessage = [ 
       {
         "type": "flex",
