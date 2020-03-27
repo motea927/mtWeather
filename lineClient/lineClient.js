@@ -35,11 +35,15 @@ const lineClient = {
             "text": "北北基彰中桃苗",
             "size": "sm",
             "offsetStart": "1px",
-            "color": "#707070"
+            "color": "#707070",
+            "margin": "xs"
+          },
+          {
+            "type": "separator",
+            "color": "#70707033",
+            "margin": "md"
           }
-        ],
-        "borderColor": "#33333333",
-        "borderWidth": "1px"
+        ]
       },
       "footer": {
         "type": "box",
