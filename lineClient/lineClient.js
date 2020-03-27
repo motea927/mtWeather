@@ -42,67 +42,7 @@ const lineClient = {
         }
       ]
     ])
-    const bubbleMessageArr = []
-    locationMap.forEach((valueObj, key, map) => {
-      const bubbleMessageContents = []
-      bubbleMessageArr.push({
-        "type": "bubble",
-        "hero": {
-          "type": "image",
-          "size": "full",
-          "aspectRatio": "20:13",
-          "aspectMode": "cover",
-          "action": {
-            "type": "uri",
-            "uri": "http://linecorp.com/"
-          },
-          "url": "https://www.travel.taipei/image/64607/1024x768"
-        },
-        "body": {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
-            {
-              "type": "text",
-              "text": `${valueObj.title}`,
-              "weight": "bold",
-              "size": "xl"
-            },
-            {
-              "type": "text",
-              "text": `${valueObj.subtitle}`,
-              "size": "sm",
-              "offsetStart": "1px",
-              "color": "#707070",
-              "margin": "xs"
-            },
-            {
-              "type": "separator",
-              "color": "#70707033",
-              "margin": "md"
-            }
-          ]
-        },
-        "footer": {
-          "type": "box",
-          "layout": "vertical",
-          "spacing": "sm",
-          "contents": {
-            "type": "button",
-            "style": "link",
-            "height": "sm",
-            "action": {
-              "type": "postback",
-              "label": `台北`,
-              "data": `台北`,
-              "displayText": `台北`
-            }
-          },
-          "flex": 0
-        }
-      }
-      )
-    })
+    
     const replyMessage = [ 
       {
         "type": "flex",
@@ -110,7 +50,99 @@ const lineClient = {
         // contents
         "contents": {
           "type": "carousel",
-          "contents": bubbleMessageArr
+          "contents": [
+            {
+              "type": "bubble",
+              "hero": {
+                "type": "image",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "action": {
+                  "type": "uri",
+                  "uri": "http://linecorp.com/"
+                },
+                "url": "https://www.travel.taipei/image/64607/1024x768"
+              },
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "北部地區",
+                    "weight": "bold",
+                    "size": "xl"
+                  },
+                  {
+                    "type": "text",
+                    "text": "北北基彰中桃苗",
+                    "size": "sm",
+                    "offsetStart": "1px",
+                    "color": "#707070",
+                    "margin": "xs"
+                  },
+                  {
+                    "type": "separator",
+                    "color": "#70707033",
+                    "margin": "md"
+                  }
+                ]
+              },
+              "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "height": "sm",
+                    "action": {
+                      "type": "postback",
+                      "label": "hello",
+                      "data": "hello",
+                      "displayText": "hello"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "height": "sm",
+                    "action": {
+                      "type": "postback",
+                      "label": "hello",
+                      "data": "hello",
+                      "displayText": "hello"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "height": "sm",
+                    "action": {
+                      "type": "postback",
+                      "label": "hello",
+                      "data": "hello",
+                      "displayText": "hello"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "height": "sm",
+                    "action": {
+                      "type": "postback",
+                      "label": "hello",
+                      "data": "hello",
+                      "displayText": "hello"
+                    }
+                  }
+                ],
+                "flex": 0
+              }
+            }
+          ]
         }
       }
     ]
