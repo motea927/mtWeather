@@ -22,17 +22,17 @@ const lineClient = {
                     {
                         "type": "postback",
                         "label": "台北市",
-                        "data": "action=buy&itemid=111"
+                        "data": "台北市"
                     },
                     {
                         "type": "postback",
-                        "label": "Add to cart",
-                        "data": "action=add&itemid=111"
+                        "label": "新北市",
+                        "data": "新北市"
                     },
                     {
-                        "type": "uri",
-                        "label": "View detail",
-                        "uri": "http://example.com/page/111"
+                        "type": "postback",
+                        "label": "基隆市",
+                        "data": "基隆市"
                     }
                 ]
               }
