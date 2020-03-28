@@ -13,7 +13,7 @@ const getWeather = async (lat, lng) => {
     const currently = response.data.currently
     const hourly = response.data.hourly
     const daily = response.data.daily
-    hourly.data = hourly.data.slice(0, 6)
+    hourly.data = hourly.data.slice(0, 8)
     hourly.data.forEach( hourlyData => {
       const date = new Date((hourlyData.time + 28800) * 1000)
       hourlyData.time = `${addZeroString(date.getHours())}:${addZeroString(date.getMinutes())}`
