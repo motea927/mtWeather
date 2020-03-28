@@ -253,7 +253,7 @@ const lineClient = {
             ]
           }
         )
-        if (index < weatherResult.data.length - 1) {
+        if (index < weatherResult[keys].data.length - 1) {
           weatherData.push({
             "type": "separator"
           })
