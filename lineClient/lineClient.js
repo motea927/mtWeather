@@ -59,46 +59,33 @@ const lineClient = {
                 "layout": "horizontal",
                 "contents": [
                   {
+                    "type": "image",
+                    "url": "https://mt-weather.herokuapp.com/static/%E5%90%8D%E7%94%A2/%E5%9F%BA%E9%9A%86-%E7%94%9C%E4%B8%8D%E8%BE%A3.png",
+                    "size": "xxl",
+                    "flex": 1,
+                    "gravity": "center",
+                    "offsetStart": "20px"
+                  },
+                  {
                     "type": "button",
                     "action": {
                       "type": "postback",
                       "label": "台北市",
                       "data": "台北市",
                       "displayText": "台北市"
-                    }
+                    },
+                    "flex": 5
                   },
                   {
                     "type": "separator"
                   },
                   {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "separator"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  },
-                  {
-                    "type": "separator"
+                    "type": "image",
+                    "url": "https://mt-weather.herokuapp.com/static/%E5%90%8D%E7%94%A2/%E5%9F%BA%E9%9A%86-%E7%94%9C%E4%B8%8D%E8%BE%A3.png",
+                    "size": "xxs",
+                    "flex": 1,
+                    "gravity": "center",
+                    "offsetStart": "20px"
                   },
                   {
                     "type": "button",
@@ -107,277 +94,8 @@ const lineClient = {
                       "label": "台北市",
                       "data": "台北市",
                       "displayText": "台北市"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "separator"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  },
-                  {
-                    "type": "separator"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "separator"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  },
-                  {
-                    "type": "separator"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "separator"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  },
-                  {
-                    "type": "separator"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "separator"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  },
-                  {
-                    "type": "separator"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "separator"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  },
-                  {
-                    "type": "separator"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "separator"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  },
-                  {
-                    "type": "separator"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "separator"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  },
-                  {
-                    "type": "separator"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "separator"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  },
-                  {
-                    "type": "separator"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "separator"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
-                  },
-                  {
-                    "type": "separator"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    }
+                    },
+                    "flex": 5
                   }
                 ]
               }
