@@ -49,134 +49,340 @@ const lineClient = {
         "altText": "未來六小時天氣",
         // contents
         "contents": {
-          "type": "carousel",
-          "contents": [
-            {
-              "type": "bubble",
-              "hero": {
-                "type": "image",
-                "size": "full",
-                "aspectRatio": "20:13",
-                "aspectMode": "cover",
-                "action": {
-                  "type": "uri",
-                  "uri": "http://linecorp.com/"
-                },
-                "url": "https://www.travel.taipei/image/64607/1024x768"
-              },
-              "body": {
+          "type": "bubble",
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
                 "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "北部地區",
-                    "weight": "bold",
-                    "size": "xl"
-                  },
-                  {
-                    "type": "text",
-                    "text": "北北基彰中桃苗",
-                    "size": "sm",
-                    "offsetStart": "1px",
-                    "color": "#707070",
-                    "margin": "xs"
-                  },
-                  {
-                    "type": "separator",
-                    "color": "#70707033",
-                    "margin": "md"
-                  }
-                ]
-              },
-              "footer": {
-                "type": "box",
-                "layout": "vertical",
-                "spacing": "sm",
+                "layout": "horizontal",
                 "contents": [
                   {
                     "type": "button",
-                    "style": "link",
-                    "height": "sm",
                     "action": {
                       "type": "postback",
-                      "label": "hello",
-                      "data": "hello",
-                      "displayText": "hello"
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
+                    }
+                  },
+                  {
+                    "type": "separator"
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "postback",
+                      "label": "台北市",
+                      "data": "台北市",
+                      "displayText": "台北市"
                     }
                   }
                 ]
               }
-            },
-            {
-              "type": "bubble",
-              "hero": {
-                "type": "image",
-                "size": "full",
-                "aspectRatio": "20:13",
-                "aspectMode": "cover",
-                "action": {
-                  "type": "uri",
-                  "uri": "http://linecorp.com/"
-                },
-                "url": "https://www.travel.taipei/image/64607/1024x768"
-              },
-              "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "北部地區",
-                    "weight": "bold",
-                    "size": "xl"
-                  },
-                  {
-                    "type": "text",
-                    "text": "北北基彰中桃苗",
-                    "size": "sm",
-                    "offsetStart": "1px",
-                    "color": "#707070",
-                    "margin": "xs"
-                  },
-                  {
-                    "type": "separator",
-                    "color": "#70707033",
-                    "margin": "md"
-                  }
-                ]
-              },
-              "footer": {
-                "type": "box",
-                "layout": "vertical",
-                "spacing": "sm",
-                "contents": [
-                  {
-                    "type": "button",
-                    "style": "link",
-                    "height": "sm",
-                    "action": {
-                      "type": "postback",
-                      "label": "hello",
-                      "data": "hello",
-                      "displayText": "hello"
-                    }
-                  },
-                  {
-                    "type": "button",
-                    "style": "link",
-                    "height": "sm",
-                    "action": {
-                      "type": "postback",
-                      "label": "hello",
-                      "data": "hello",
-                      "displayText": "hello"
-                    }
-                  }
-                ],
-              }
-            }
-          ]
+            ]
+          }
         }
       }
     ]
