@@ -201,19 +201,22 @@ const lineClient = {
           "type": "text",
           "text": "時間",
           "size": "md",
-          "weight": "bold"
+          "weight": "bold",
+          "align": "start"
         },
         {
           "type": "text",
           "text": "溫度",
           "size": "md",
-          "weight": "bold"
+          "weight": "bold",
+          "align": "center"
         },
         {
           "type": "text",
           "text": "降雨機率",
           "size": "md",
-          "weight": "bold"
+          "weight": "bold",
+          "align": "end"
         }
       ]
     }
@@ -223,7 +226,7 @@ const lineClient = {
       const weatherData = [
         weatherTitle
       ]
-      weatherResult[keys].data.forEach(el => {
+      weatherResult[keys].data.forEach((el, index) => {
         weatherData.push(
           {
             "type": "box",
@@ -233,20 +236,28 @@ const lineClient = {
               {
                 "type": "text",
                 "text": `${el.time}`,
-                "size": "sm"
+                "size": "sm",
+                "align": "start"
               },
               {
                 "type": "text",
                 "text": `${el.temperature} °C`,
-                "size": "sm"
+                "size": "sm",
+                "align": "center"
               },
               {
                 "type": "text",
-                "text": `${Math.round(el.precipProbability * 100)} %`
+                "text": `${Math.round(el.precipProbability * 100)} %`,
+                "align": "end"
               }
             ]
           }
         )
+        if (index < weatherResult.data.length - 1) {
+          weatherData.push({
+            "type": "separator"
+          })
+        }
       })
       // 
       const bubbleMessage = {
