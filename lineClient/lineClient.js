@@ -8,41 +8,200 @@ let replyMessage
 const lineClient = {
   sendLocationList (replyToken) {
     // key, value
-    const locationMap = new Map([
-      [
-        'north', {
-          title: '北部地區',
-          subtitle: '北基桃竹苗',
-          city: ['台北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '苗栗縣'],
+    const locationArr = [
+      { 
+        name: '台北市',
+        icon: 'Taipei',
+        location: {
+          lat: 25.0420713,
+          lng: 121.4616599
         }
-      ],
-      [
-        'central', {
-          title: '中部地區',
-          subtitle: '中彰投',
-          city: ['台中市', '彰化縣', '南投縣'],
+      },
+      { 
+        name: '新北市',
+        icon: 'NewTaipei',
+        location: {
+          lat: 24.9875278,
+          lng: 121.364592
         }
-      ],
-      ['south', {
-          title: '南部地區',
-          subtitle: '雲嘉南高屏',
-          city: ['雲林縣', '嘉義市', '嘉義縣', '台南市', '高雄市', '屏東縣'],
+      },
+      { 
+        name: '基隆市',
+        icon: 'Keelung',
+        location: {
+          lat: 25.1241862,
+          lng: 121.6475833
         }
-      ],
-      ['east', {
-          title: '東部地區',
-          subtitle: '宜花東',
-          city: ['宜蘭縣', '花蓮縣', '台東縣'],
+      },
+      { 
+        name: '桃園市',
+        icon: 'Taoyuan',
+        location: {
+          lat: 24.8551722,
+          lng: 120.9519878
         }
-      ],
-      ['out', {
-          title: '離島地區',
-          subtitle: '澎金連',
-          city: ['澎湖縣', '金門縣', '連江縣'],
+      },
+      { 
+        name: '新竹市',
+        icon: 'HsinchuCity',
+        location: {
+          lat: 24.7849113,
+          lng: 120.8859866
         }
-      ]
-    ])
-    
+      },
+      { 
+        name: '新竹縣',
+        icon: 'HsinchuCounty',
+        location: {
+          lat: 24.6873144,
+          lng: 120.8920084
+        }
+      },
+      { 
+        name: '苗栗縣',
+        icon: 'Miaoli',
+        location: {
+          lat: 24.5151718,
+          lng: 120.6615323
+        }
+      },
+      { 
+        name: '台中市',
+        icon: 'Taichung',
+        location: {
+          lat: 24.2204731,
+          lng: 120.6756768
+        }
+      },
+      { 
+        name: '彰化縣',
+        icon: 'Changhua',
+        location: {
+          lat: 23.992187,
+          lng: 120.3230657
+        }
+      },
+      { 
+        name: '南投縣',
+        icon: 'Nantou',
+        location: {
+          lat: 23.8412218,
+          lng: 120.7023206
+        }
+      },
+      { 
+        name: '雲林縣',
+        icon: 'Yunlin',
+        location: {
+          lat: 23.6747002,
+          lng: 120.1543941
+        }
+      },
+      { 
+        name: '嘉義市',
+        icon: 'ChiayiCity',
+        location: {
+          lat: 23.4790323,
+          lng: 120.4142768
+        }
+      },
+      { 
+        name: '台南市',
+        icon: 'Tainan',
+        location: {
+          lat: 23.1510076,
+          lng: 120.0618201
+        }
+      },
+      { 
+        name: '高雄市',
+        icon: 'Kaohsiung',
+        location: {
+          lat: 22.8724273,
+          lng: 120.1921921
+        }
+      },
+      { 
+        name: '屏東縣',
+        icon: 'Pingtung',
+        location: {
+          lat: 22.3912447,
+          lng: 120.067928
+        }
+      },
+      { 
+        name: '宜蘭縣',
+        icon: 'Yilan',
+        location: {
+          lat: 25.0374821,
+          lng: 121.848923
+        }
+      },
+      { 
+        name: '花蓮縣',
+        icon: 'Hualien',
+        location: {
+          lat: 23.7344266,
+          lng: 120.8196233
+        }
+      },
+      { 
+        name: '台東縣',
+        icon: 'Taitung',
+        location: {
+          lat: 22.7221327,
+          lng: 120.6096544
+        }
+      },
+      { 
+        name: '澎湖縣',
+        icon: 'Penghu',
+        location: {
+          lat: 23.4815522,
+          lng: 119.2404868
+        }
+      },
+      { 
+        name: '金門縣',
+        icon: 'Kinmen',
+        location: {
+          lat: 24.3490276,
+          lng: 118.1884772
+        }
+      },
+      { 
+        name: '連江縣',
+        icon: 'Mazu',
+        location: {
+          lat: 26.1331784,
+          lng: 119.9466092
+        }
+      }
+    ]
+    const locationBtnMessage = []
+    locationArr.forEach((el, index) => {
+      locationBtnMessage.push({
+        "type": "image",
+        "url": `https://mt-weather.herokuapp.com/static/location-icon/${el.icon}.png`,
+        "size": "xxl",
+        "flex": 1,
+        "gravity": "center",
+        "offsetStart": "20px"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": `${el.name}`,
+          "data": `${el.location}`,
+          "displayText": `${el.name}`
+        },
+        "flex": 5
+      },
+      {
+        "type": "separator"
+      },)
+    })
     const replyMessage = [ 
       {
         "type": "flex",
@@ -57,47 +216,7 @@ const lineClient = {
               {
                 "type": "box",
                 "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "image",
-                    "url": "https://mt-weather.herokuapp.com/static/location-icon/Taipei.png",
-                    "size": "xxl",
-                    "flex": 1,
-                    "gravity": "center",
-                    "offsetStart": "20px"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    },
-                    "flex": 5
-                  },
-                  {
-                    "type": "separator"
-                  },
-                  {
-                    "type": "image",
-                    "url": "https://mt-weather.herokuapp.com/static/location-icon/NewTaipei.png",
-                    "size": "xxs",
-                    "flex": 1,
-                    "gravity": "center",
-                    "offsetStart": "20px"
-                  },
-                  {
-                    "type": "button",
-                    "action": {
-                      "type": "postback",
-                      "label": "台北市",
-                      "data": "台北市",
-                      "displayText": "台北市"
-                    },
-                    "flex": 5
-                  }
-                ]
+                "contents": locationBtnMessage
               }
             ]
           }
