@@ -10,23 +10,26 @@ app.post('/webhook', middleware(config), (req, res) => {
   console.log(req.body.events[0])
   const replyToken = req.body.events[0].replyToken
   if (userMessage.type === 'message') {
-    switch (userMessage.message.text) {
-      case '我的GPS定位':
-        lineClient.sendLocationBtn(replyToken)
-        break
-      case '自行選取地區':
-        // do someing
-        lineClient.sendLocationList(replyToken)
-        break
-      default:
-        // lineClient.sendText(replyToken, userMessage.text)
-        lineClient.sendText(replyToken, userMessage.message.text)
+    if (userMessage.message.type === 'text') {
+      switch (userMessage.message.text) {
+        case '我的GPS定位':
+          lineClient.sendLocationBtn(replyToken)
+          break
+        case '自行選取地區':
+          // do someing
+          lineClient.sendLocationList(replyToken)
+          break
+        default:
+          // lineClient.sendText(replyToken, userMessage.text)
+          lineClient.sendText(replyToken, userMessage.message.text)
+      }
+    } else if (userMessage.message.type === 'location'){
+      lineClient.sendWeatherMessage(userMessage.message.latitude, userMessage.message.longitude, replyToken, userMessage.message.address)
     }
-  } else if (userMessage.type === 'location') {
-    lineClient.sendWeatherMessage(userMessage.latitude, userMessage.longitude, replyToken, userMessage.address)
-    // lineClient.sendText(replyToken, userMessage.address)
-  } else if (userMessage.type === 'postback') {
+    
+  }else if (userMessage.type === 'postback') {
     // select some locatioon, userMessage.postback.data = '台北市'
+    console.log(userMessage.postback.data)
   }
 })
 app.use('/static', express.static('img'))
