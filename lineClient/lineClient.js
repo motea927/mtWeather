@@ -206,6 +206,7 @@ const lineClient = {
           "contents": locationBtnMessage
         })
         if ((index + 1) !== locationArr.length) {
+          console.log(index, locationArr.length)
           locationBtnBox.push(
             {
             "type": "separator"}
