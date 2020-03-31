@@ -29,6 +29,8 @@ app.post('/webhook', middleware(config), (req, res) => {
     
   }else if (userMessage.type === 'postback') {
     // select some locatioon, userMessage.postback.data = '台北市'
+    console.log(userMessage.postback.data[0])
+    console.log(userMessage.postback.data[1])
     console.log(JSON.stringify(userMessage.postback.data))
   }
 })
