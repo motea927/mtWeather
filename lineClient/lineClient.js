@@ -277,7 +277,7 @@ const lineClient = {
     }
     const finallyData = {'hourly': null, 'daily': null}
     Object.keys(finallyData).forEach(keys => {
-      console.log(keys)
+      // console.log(keys)
       const weatherData = [
         weatherTitle
       ]
