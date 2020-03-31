@@ -198,9 +198,6 @@ const lineClient = {
           "displayText": `${el.name}`
         },
         "flex": 5
-      },
-      {
-        "type": "separator"
       })
       if ((index + 1) % 2 === 0) {
         locationBtnBox.push({
@@ -209,6 +206,12 @@ const lineClient = {
           "contents": locationBtnMessage
         })
         locationBtnMessage = []
+      } else {
+        locationBtnMessage.push(
+          {
+            "type": "separator"
+          }
+        )
       }
     })
     const replyMessage = [ 
