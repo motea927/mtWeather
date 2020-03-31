@@ -178,9 +178,9 @@ const lineClient = {
         }
       }
     ]
-    const locationBtnMessage = []
+    let locationBtnMessage = []
+    let locationBtnBox = []
     locationArr.forEach((el, index) => {
-      if (index === 1) return
       locationBtnMessage.push({
         "type": "image",
         "url": `https://mt-weather.herokuapp.com/static/location-icon/${el.icon}.png`,
@@ -202,6 +202,14 @@ const lineClient = {
       {
         "type": "separator"
       })
+      if ((index + 1) % 2 === 0) {
+        locationBtnBox.push({
+          "type": "box",
+          "layout": "horizontal",
+          "contents": locationBtnMessage
+        })
+        locationBtnMessage = []
+      }
     })
     const replyMessage = [ 
       {
@@ -213,13 +221,7 @@ const lineClient = {
           "body": {
             "type": "box",
             "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": locationBtnMessage
-              }
-            ]
+            "contents": locationBtnBox
           }
         }
       }
