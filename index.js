@@ -7,7 +7,7 @@ const app = express()
 
 app.post('/webhook', middleware(config), (req, res) => {
   const userMessage = req.body.events[0]
-  console.log(req.body.events[0])
+  // console.log(req.body.events[0])
   const replyToken = req.body.events[0].replyToken
   if (userMessage.type === 'message') {
     if (userMessage.message.type === 'text') {
@@ -30,7 +30,8 @@ app.post('/webhook', middleware(config), (req, res) => {
   }else if (userMessage.type === 'postback') {
     // select some locatioon, userMessage.postback.data = '台北市'
     const data = JSON.parse(userMessage.postback.data)
-    console.log(data)
+    lineClient.sendWeatherMessage(data.location.lat, data.location.lng, replyToken, data.name)
+    // console.log(data)
   }
 })
 app.use('/static', express.static('img'))
