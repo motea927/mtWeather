@@ -31,7 +31,7 @@ app.post('/webhook', middleware(config), (req, res) => {
     // select some locatioon, userMessage.postback.data = '台北市'
     console.log(userMessage.postback.data[0])
     console.log(userMessage.postback.data[1])
-    console.log(JSON.stringify(userMessage.postback.data))
+    console.log(JSON.parse(userMessage.postback.data))
   }
 })
 app.use('/static', express.static('img'))
