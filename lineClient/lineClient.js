@@ -194,7 +194,7 @@ const lineClient = {
         "action": {
           "type": "postback",
           "label": `${el.name}`,
-          "data": JSON.stringify(el.location),
+          "data": JSON.stringify(el.location, el.name),
           "displayText": `${el.name}`
         },
         "flex": 5
