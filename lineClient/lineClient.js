@@ -196,7 +196,7 @@ const lineClient = {
           "label": `${el.name}`,
           "data": JSON.stringify(
             {
-              name: el.name,
+              name: `${el.name}`,
               location: el.location
             }
           ),
