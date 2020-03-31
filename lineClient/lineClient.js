@@ -180,6 +180,7 @@ const lineClient = {
     ]
     const locationBtnMessage = []
     locationArr.forEach((el, index) => {
+      if (index === 1) return
       locationBtnMessage.push({
         "type": "image",
         "url": `https://mt-weather.herokuapp.com/static/location-icon/${el.icon}.png`,
@@ -200,7 +201,7 @@ const lineClient = {
       },
       {
         "type": "separator"
-      },)
+      })
     })
     const replyMessage = [ 
       {
