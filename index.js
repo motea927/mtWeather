@@ -6,11 +6,11 @@ const lineClient = require('./lineClient/lineClient')
 const app = express()
 
 app.post('/webhook', middleware(config), (req, res) => {
-  const userMessage = req.body.events[0].message
+  const userMessage = req.body.events[0]
   console.log(req.body.events[0])
   const replyToken = req.body.events[0].replyToken
-  if (userMessage.type === 'text') {
-    switch (userMessage.text) {
+  if (userMessage.type === 'message') {
+    switch (userMessage.message.text) {
       case '我的GPS定位':
         lineClient.sendLocationBtn(replyToken)
         break
@@ -20,7 +20,7 @@ app.post('/webhook', middleware(config), (req, res) => {
         break
       default:
         // lineClient.sendText(replyToken, userMessage.text)
-        lineClient.sendText(replyToken, userMessage.text)
+        lineClient.sendText(replyToken, userMessage.message.text)
     }
   } else if (userMessage.type === 'location') {
     lineClient.sendWeatherMessage(userMessage.latitude, userMessage.longitude, replyToken, userMessage.address)
