@@ -60,7 +60,7 @@ const lineClient = {
                 "contents": [
                   {
                     "type": "image",
-                    "url": "https://mt-weather.herokuapp.com/static/%E5%90%8D%E7%94%A2/%E5%9F%BA%E9%9A%86-%E7%94%9C%E4%B8%8D%E8%BE%A3.png",
+                    "url": "https://mt-weather.herokuapp.com/static/location-icon/Taipei.png",
                     "size": "xxl",
                     "flex": 1,
                     "gravity": "center",
@@ -81,7 +81,7 @@ const lineClient = {
                   },
                   {
                     "type": "image",
-                    "url": "https://mt-weather.herokuapp.com/static/%E5%90%8D%E7%94%A2/%E5%9F%BA%E9%9A%86-%E7%94%9C%E4%B8%8D%E8%BE%A3.png",
+                    "url": "https://mt-weather.herokuapp.com/static/location-icon/NewTaipei.png",
                     "size": "xxs",
                     "flex": 1,
                     "gravity": "center",
