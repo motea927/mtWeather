@@ -1,6 +1,10 @@
-const config =  require('../config/config')
 const line = require('@line/bot-sdk')
 const weather = require('../weather/weather')
+let config = {
+  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
+  channelSecret: process.env.CHANNEL_SECRET
+}
+if (!config.channelAccessToken) config = require('../api-key/lineApiKey')
 const client = new line.Client({
   channelAccessToken: config.channelAccessToken
 })

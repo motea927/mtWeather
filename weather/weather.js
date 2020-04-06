@@ -1,6 +1,6 @@
 const axios = require('axios')
 let key = process.env.WEATHER_KEY
-if (!key) key = require('../weather-key')
+if (!key) key = require('../api-key/darkSkyApiKey')
 
 function addZeroString (num) {
   if (num >= 10) return num
