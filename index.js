@@ -1,9 +1,14 @@
 const express = require('express')
 const line = require('@line/bot-sdk')
 const middleware = line.middleware
-const config =  require('./config/config')
 const lineClient = require('./lineClient/lineClient')
 const app = express()
+
+let config = {
+  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
+  channelSecret: process.env.CHANNEL_SECRET
+}
+if (!config.channelAccessToken) config = require('./api-key/lineApiKey')
 
 app.post('/webhook', middleware(config), (req, res) => {
   const userMessage = req.body.events[0]
