@@ -4,7 +4,7 @@
 
 可依定位資訊或自行選擇地區來查詢天氣的LINE機器人
 
-![image](https://raw.githubusercontent.com/motea927/mtWeather/master/demoImg/demo.gif)
+<img src="https://raw.githubusercontent.com/motea927/mtWeather/master/demoImg/demo.gif" width = "auto" height = "600px" />
 
 ## :page_facing_up: 技術
 
